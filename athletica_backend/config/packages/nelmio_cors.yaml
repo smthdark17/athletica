@@ -1,0 +1,12 @@
+nelmio_cors:
+  defaults:
+    allow_credentials: false
+    allow_origin: ['*']  # Указывай домены, если требуется, например, 'http://localhost:3000'
+    allow_headers: ['Content-Type', 'Authorization']
+    expose_headers: []
+    max_age: 3600
+  paths:
+    '^/api/': # Разрешаем CORS для всех API-запросов
+      allow_origin: ['*']  # Разрешаем любые источники
+      allow_methods: ['POST', 'OPTIONS', 'GET', 'PUT', 'DELETE']  # Убедись, что POST и OPTIONS разрешены
+      allow_headers: ['Content-Type', 'Authorization'] # Разрешенные заголовки
